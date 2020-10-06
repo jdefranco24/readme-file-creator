@@ -65,6 +65,7 @@ async function writeToFile(fileName, data) {
 // function to initialize program
 async function init() {
     const answers = await inquirer.prompt(questions);
+    console.log("Successful");
 
     const htmlString = generateMarkdown(answers);
     
@@ -72,5 +73,6 @@ async function init() {
     // console.log(answers.name, answers.age);
     
 }
+
 // function call to initialize program
 init();
