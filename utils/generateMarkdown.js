@@ -1,12 +1,32 @@
 // function to generate markdown for Read me
 function generateMarkdown(data) {
-    return`# ${data.title}
-        ### Welcome to ${data.name}'s page! 
+    return` 
+    ${data.title}
 
-        ## Use 
-            - like so..
-            - my age: ${data.age}
-            -other stuff
+    ${data.badge}
+    
+    Description
+
+    ${data.description}
+    
+    Installation
+
+    ${data.installation}
+    
+    Usage
+    
+    ${data.usage}
+
+    Credits
+    
+
+    ## Test
+
+    ${data.test}
+
+    Repository
+
+    - [Project Repo](${data.repo})
     `
 }
 
