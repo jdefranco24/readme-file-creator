@@ -36,7 +36,11 @@ const questions = [
     name: "license"
 },
 {
-    message: "Any other contributing parties?",
+    message: "Any other collaborating parties?",
+    name: "collab"
+},
+{
+    message: "What are the guidelines if you are open to other contributions?",
     name: "contributing"
 },
 {
