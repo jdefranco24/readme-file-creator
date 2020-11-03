@@ -1,13 +1,52 @@
-## ReadMe File Creator
+# example
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-For this task, I have worked to develop a readme generator. The purpose is to simplify read me files and saving the user some additional time. By using node.js, I am creating an application for the everyday coder. 
+## Description
 
-The Terminal asks a series of questions that the user should answer for a proper read me file. 
+This is an example or test run of the application. This means nothing but for visual and effectiveness of the application.
 
-![](questions.png)
+## Table of Contents 
 
-Once completed you will see in your folder a new read me based on your project title!
+* [Installation](#installation)
 
-![](file.png)
+* [Usage](#usage)
 
-From there you can adjust anything you would like to on the read me and use it to your advantage. If anyone would like to adjust the code or work to create it to there liking go right ahead. I appreciate any contributions out there. 
+* [License](#license)
+
+* [Contributing](#contributing)
+
+* [Tests](#tests)
+
+* [Questions](#questions)
+
+## Installation
+
+To install necessary dependencies, run the following command:
+
+```
+npm i
+```
+
+## Usage
+
+This is a prank
+
+## License
+
+This project is licensed under the MIT license.
+    
+## Contributing
+
+You are the prank
+
+## Tests
+
+To run tests, run the following command:
+
+```
+npm test
+```
+
+## Questions
+
+If you have any questions about the repo, open an issue or contact me directly at jdefranco449@gmail.com. You can find more of my work at [jdefranco24](https://github.com/jdefranco24/).
