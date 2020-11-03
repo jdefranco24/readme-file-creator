@@ -1,78 +1,70 @@
-const inquirer = require("inquirer");
 const fs = require("fs");
-// const open = require("open");
-const util = require("util");
+const path = require("path");
+const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 
-const writeAsync = util.promisify(fs.writeFile);
-// array of questions for user 
 const questions = [
 {
-    message: "what is your Name?",
-    name: "name" 
+    type: "input",
+    name: "github",
+    message: "What is your GitHub username?",
 },
 {
-    message: "what is your Project Title?",
-    name: "title" 
+    type: "input",
+    name: "email",
+    message: "What is your email address?",
 },
 {
-    message: "Please provide the badge links.",
-    name: "badge"
+    type: "input",
+    name: "title",
+    message: "What is your project's name?",
 },
 {
-    message: "Provide your projects description.",
-    name: "description"
+    type: "input",
+    name: "description",
+    message: "Please write a short description of your project",
 },
 {
-    message: "Please provide installation instructions?",
-    name: "installation"
+    type: "list",
+    name: "license",
+    message: "What kind of license should your project have?",
+    choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"],
 },
 {
-    message: "Provide instruction and examples for use. Include screenshots as needed.",
-    name: "usage"
+    type: "input",
+    name: "installation",
+    message: "What command should be run to install dependencies?",
+    default: "npm i",
 },
 {
-    message: "Please provide the project license or badge link.",
-    name: "license"
+    type: "input",
+    name: "test",
+    message: "What command should be run to run tests?",
+    default: "npm test",
 },
 {
-    message: "Any other collaborating parties?",
-    name: "collab"
+    type: "input",
+    name: "usage",
+    message: "What does the user need to know about using the repo?",
 },
 {
-    message: "What are the guidelines if you are open to other contributions?",
-    name: "contributing"
-},
-{
-    message: "Please provide project tests",
-    name: "test"
-},
-{
-    message: "Please provide repo link",
-    name: "repo"
-},
-{
-    message: "What is your github username?",
-    name: "username"
+    type: "input",
+    name: "contributing",
+    message: "What does the user need to know about contributing to the repo?",
 },
 ];
 
-// function to write read me file
-async function writeToFile(fileName, data) {
-    await writeAsync(fileName, data);
-    
-}
-// function to initialize program
-async function init() {
-    const answers = await inquirer.prompt(questions);
-    console.log("Successful");
-
-    const htmlString = generateMarkdown(answers);
-    
-    writeToFile(answers.name + ".md", htmlString);
-    // console.log(answers.name, answers.age);
-    
+function writeToFile(fileName, data) {
+return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
 
-// function call to initialize program
+function init() {
+inquirer.prompt(questions).then((inquirerResponses) => {
+    console.log(inquirerResponses);
+    console.log("Generating README...");
+    writeToFile("README.md", generateMarkdown({ ...inquirerResponses }));
+});
+}
+
 init();
+
