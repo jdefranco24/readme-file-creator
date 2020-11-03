@@ -1,17 +1,17 @@
-# example
-![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+# Readme File Creator
+
 
 ## Description
 
-This is an example or test run of the application. This means nothing but for visual and effectiveness of the application.
+I was tasked with creating an automated readme through the process of node. When prompted the terminal will ask a series of questions where you fill in the blanks. The questions are template questions to help fill in the necessary information required in a readme. The information provides details so outsiders can understand the application. This is a working template and speeds efficiency of projects.
+
+![picture](questions.png)
 
 ## Table of Contents 
 
 * [Installation](#installation)
 
 * [Usage](#usage)
-
-* [License](#license)
 
 * [Contributing](#contributing)
 
@@ -29,15 +29,13 @@ npm i
 
 ## Usage
 
-This is a prank
+It can be used for any project 
 
-## License
 
-This project is licensed under the MIT license.
     
 ## Contributing
 
-You are the prank
+Contributions are open and if you have any questions, feel free to email me.
 
 ## Tests
 
@@ -50,3 +48,4 @@ npm test
 ## Questions
 
 If you have any questions about the repo, open an issue or contact me directly at jdefranco449@gmail.com. You can find more of my work at [jdefranco24](https://github.com/jdefranco24/).
+
