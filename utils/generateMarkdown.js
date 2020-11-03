@@ -1,59 +1,81 @@
-// function to generate markdown for Read me
+function renderLicenseBadge(license) {
+    if (license !== "None") {
+    return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`
+    }
+    return ''
+}
+
+function renderLicenseLink(license) {
+    if (license !== "None") {
+    return (
+        `\n* [License](#license)\n`
+    )
+    }
+    return ''
+}
+
+function renderLicenseSection(license) {
+    if (license !== "None") {
+    return (
+        `## License
+
+This project is licensed under the ${license} license.`
+    )
+    }
+    return ''
+}
+
 function generateMarkdown(data) {
-    return` 
-    #**${data.title}**
+    return `# ${data.title}
+${renderLicenseBadge(data.license)}
 
-    ## Table of Contents
+## Description
 
-    - [Description](#description)
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [Credits](#collab)
-    - [License](#license)
-    - [Badges](#badge)
-    - [Contributing](#contributing)
-    - [Test](#test)
-    - [Repository](#repo) 
-    
-    ## Description
-    
-    ${data.description}
+${data.description}
 
-    
-    
-    ## Installation
-    
-    ${data.installation}
-    
-    ## Usage
-    
-    ${data.usage}
-    
-    ## Credits
-    
-    ${data.collab}
-    
-    ## License
-    
-    ${data.license}
+## Table of Contents 
 
-    ## Badges
-    ${data.badge}
+* [Installation](#installation)
 
-    ## Contributing
+* [Usage](#usage)
+${renderLicenseLink(data.license)}
+* [Contributing](#contributing)
 
-    ${data.contributing}
+* [Tests](#tests)
 
-    ## Test
+* [Questions](#questions)
 
-    ${data.test}
+## Installation
 
-    ## Repository
+To install necessary dependencies, run the following command:
 
-        - Project Repo: ${data.repo}
-        - Username: ${data.username}
+\`\`\`
+${data.installation}
+\`\`\`
 
-    `
+## Usage
+
+${data.usage}
+
+${renderLicenseSection(data.license)}
+    
+## Contributing
+
+${data.contributing}
+
+## Tests
+
+To run tests, run the following command:
+
+\`\`\`
+${data.test}
+\`\`\`
+
+## Questions
+
+If you have any questions about the repo, open an issue or contact me directly at ${data.email}. You can find more of my work at [${data.github}](https://github.com/${data.github}/).
+
+`;
 }
 
 module.exports = generateMarkdown;
